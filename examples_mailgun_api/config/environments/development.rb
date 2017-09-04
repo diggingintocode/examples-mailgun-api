@@ -33,8 +33,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-    api_key: ENV["MAILGUN_API_KEY"],
-    domain: ENV["MAILGUN_DOMAIN"],
+    api_key: Rails.application.secrets.MAILGUN_API_KEY,
+    domain: Rails.application.secrets.MAILGUN_DOMAIN,
   }
 
   # Print deprecation notices to the Rails logger.
